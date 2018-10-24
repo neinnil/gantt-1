@@ -7,6 +7,20 @@ const SECOND = 'second';
 const MILLISECOND = 'millisecond';
 
 const month_names = {
+	ko: [
+		'1월',
+		'2월',
+		'3월',
+		'4월',
+		'5월',
+		'6월',
+		'7월',
+		'8월',
+		'9월',
+		'10월',
+		'11월',
+		'12월'
+	],
     en: [
         'January',
         'February',
@@ -104,7 +118,7 @@ export default {
         return date_string + (with_time ? ' ' + time_string : '');
     },
 
-    format(date, format_string = 'YYYY-MM-DD HH:mm:ss.SSS', lang = 'en') {
+    format(date, format_string = 'YYYY-MM-DD HH:mm:ss.SSS', lang = 'ko') {
         const values = this.get_date_values(date).map(d => padStart(d, 2, 0));
         const format_map = {
             YYYY: values[0],
